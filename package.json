@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/tplante/react-d3/issues"
   },
-  "homepage": "https://github.com/tplante/react-d3#readme",
+  "homepage": "https://github.com/tplante/react-d3",
   "babel": {
     "presets": [
       "env",
