@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import BarChart from "./BarChart";
+import React, { Component } from 'react';
+import BarChart from './BarChart';
 class App extends Component {
   constructor() {
     super();
@@ -20,8 +20,8 @@ class App extends Component {
   render() {
     this.updateData();
     return (
-      <div className="App">
-        <div className="App-header">
+      <div className='App'>
+        <div className='App-header'>
           <h1>React and d3</h1>
         </div>
         <div>
