@@ -1,34 +1,42 @@
 import React, { Component } from 'react';
 import BarChart from './BarChart';
+
+const initialData = [{
+  key: 'Option 1',
+  value: 1
+}, {
+  key: 'Option 2',
+  value: 2
+}, {
+  key: 'Option 3',
+  value: 3
+}];
+
 class App extends Component {
   constructor() {
     super();
-    this.state = {
-      data: [5, 10, 1, 3]
-    };
+    this.state = { data: initialData };
     this.updateData = this.updateData.bind(this);
   }
 
   updateData() {
     setTimeout(() => {
-      this.setState({
-        data: [Math.random(), Math.random(), Math.random(), Math.random()]
+      const data = initialData;
+      data.map(d => {
+        d.value = Math.random();
       });
-    }, 1500);
+      this.setState({ data: data });
+    }, 2000);
   }
 
   render() {
     this.updateData();
-    return (
-      <div className='App'>
-        <div className='App-header'>
-          <h1>React and d3</h1>
-        </div>
-        <div>
-          <BarChart data={this.state.data} size={[500, 500]} />
-        </div>
-      </div>
-    );
+    const args = {
+      data: this.state.data,
+      width: 960,
+      height: 540
+    };
+    return <BarChart args={args} />;
   }
 }
 export default App;
